@@ -19,17 +19,17 @@ export function createPokemons(pokemon) {
   const pokemonTagName = document.createElement('div');
   const pokemonTagTypeList = document.createElement('div');
   const BreakTag = document.createElement('br');
-  //const pokemonTagTypeList = document.createElement("div");
+
   appendChild(resultsElement, pokemonTag);
   appendChild(pokemonTag, pokemonTagId);
   appendChild(pokemonTag, pokemonTagName);
   appendChild(pokemonTag, pokemonTagTypeList);
+
   pokemonTagId.innerHTML = pokemon.id;
   pokemonTagName.innerHTML = pokemon.name;
   pokemonTagTypeList.innerHTML = pokemon.typeList;
-  appendChild(resultsElement, BreakTag);
 
-  //appendChild(resultsElement, pokemon.typeList);
+  appendChild(resultsElement, BreakTag);
 }
 
 export function removeChilds(parent) {

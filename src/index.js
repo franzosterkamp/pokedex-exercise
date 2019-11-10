@@ -5,13 +5,18 @@ import {
   createPokemons,
   removeChilds
 } from './api/elements';
-import { getPokemonsByName, sortPokemonsByName } from './api/pokemons';
+import {
+  getPokemonsByName,
+  sortPokemonsByName,
+  getPokemonsByType
+} from './api/pokemons';
 import pokemons from 'json-pokemon';
 
 // Query elements
 const searchInput = document.querySelector('.search__input');
 const resultsElement = document.querySelector('.results');
 const sortButton = document.querySelector('.sort__button');
+const typeButton = document.querySelector('.type__button');
 
 // Reset input and results
 resetInput(searchInput);
@@ -40,6 +45,12 @@ sortButton.addEventListener('click', function() {
   const PokemonSearch = getPokemonsByName(searchInput.value);
   console.log(PokemonSearch);
   sortPokemonsByName(PokemonSearch);
+  PokemonSearch.forEach(createPokemons);
+});
+
+typeButton.addEventListener('click', function() {
+  removeChilds(resultsElement);
+  const PokemonSearch = getPokemonsByType(searchInput.value);
   PokemonSearch.forEach(createPokemons);
 });
 
