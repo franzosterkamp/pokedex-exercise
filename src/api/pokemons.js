@@ -15,11 +15,11 @@ export function getPokemonsByType(TypeName) {
 }
 
 export function sortPokemonsByName(pokemons) {
-  pokemons.sort(function(a, b) {
-    const nameA = a.name.toLowerCase();
-    const nameB = b.name.toLowerCase();
-    if (nameA < nameB) return -1;
-    if (nameA > nameB) return 1;
+  pokemons.sort(function(pokemonA, pokemonB) {
+    const pokemonNameA = pokemonA.name.toLowerCase();
+    const pokemonNameB = pokemonB.name.toLowerCase();
+    if (pokemonNameA < pokemonNameB) return -1;
+    if (pokemonNameA > pokemonNameB) return 1;
     return 0;
   });
 
