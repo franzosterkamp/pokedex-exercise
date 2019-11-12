@@ -10,7 +10,7 @@ import {
   sortPokemonsByName,
   getPokemonsByType
 } from './api/pokemons';
-import pokemons from 'json-pokemon';
+//import pokemons from 'json-pokemon';
 
 // Query elements
 const searchInput = document.querySelector('.search__input');
@@ -29,19 +29,25 @@ searchInput.addEventListener('change', function() {
   removeChilds(resultsElement);
   PokemonSearchType = [];
   PokemonSearchName = getPokemonsByName(searchInput.value);
-  PokemonSearchName.forEach(createPokemons);
+  const PokemonSearchNameLength = PokemonSearchName.length;
+  console.log(PokemonSearchNameLength);
+  if (PokemonSearchNameLength == 0) {
+    setChild(resultsElement, createNoPokemons());
+  } else PokemonSearchName.forEach(createPokemons);
 });
 
 typeButton.addEventListener('click', function() {
   removeChilds(resultsElement);
   PokemonSearchName = [];
   PokemonSearchType = getPokemonsByType(searchInput.value);
-  PokemonSearchType.forEach(createPokemons);
+  const PokemonSearchTypeLength = PokemonSearchType.length;
+  if (PokemonSearchTypeLength == 0) {
+    setChild(resultsElement, createNoPokemons());
+  } else PokemonSearchType.forEach(createPokemons);
 });
 
 sortButton.addEventListener('click', function() {
   removeChilds(resultsElement);
-
   sortPokemonsByName(PokemonSearchName);
   PokemonSearchName.forEach(createPokemons);
   sortPokemonsByName(PokemonSearchType);

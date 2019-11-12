@@ -1,11 +1,3 @@
-/**
- * json-pokemon is a package which is installed with `npm i json-pokemon`.
- * See https://www.npmjs.com/package/json-pokemon
- *
- * You will find details about the properties of a pokemon.
- *
- * There are some helper functions which makes this task easier, but please try to implement your own filter and search logic.
- */
 import pokemons from 'json-pokemon';
 
 export function getPokemonsByName(pokemonName) {

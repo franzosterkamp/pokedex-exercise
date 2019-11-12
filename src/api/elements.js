@@ -9,6 +9,7 @@ export function createNoPokemons() {
   const element = document.createElement('div');
   element.className = 'results__empty';
   const content = document.createTextNode('No Pokemons found');
+  element.appendChild(document.createElement('br'));
   element.appendChild(content);
   return element;
 }
@@ -20,15 +21,14 @@ export function createPokemons(pokemon) {
   const pokemonTagTypeList = document.createElement('div');
   const BreakTag = document.createElement('br');
 
-  appendChild(resultsElement, pokemonTag);
-  appendChild(pokemonTag, pokemonTagId);
-  appendChild(pokemonTag, pokemonTagName);
-  appendChild(pokemonTag, pokemonTagTypeList);
-
   pokemonTagId.innerHTML = pokemon.id;
   pokemonTagName.innerHTML = pokemon.name;
   pokemonTagTypeList.innerHTML = pokemon.typeList;
 
+  appendChild(resultsElement, pokemonTag);
+  appendChild(pokemonTag, pokemonTagId);
+  appendChild(pokemonTag, pokemonTagName);
+  appendChild(pokemonTag, pokemonTagTypeList);
   appendChild(resultsElement, BreakTag);
 }
 
