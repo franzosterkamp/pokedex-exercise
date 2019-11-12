@@ -21,9 +21,11 @@ export function createPokemons(pokemon) {
   const pokemonTagTypeList = document.createElement('div');
   const BreakTag = document.createElement('br');
 
-  pokemonTagId.innerHTML = pokemon.id;
-  pokemonTagName.innerHTML = pokemon.name;
-  pokemonTagTypeList.innerHTML = pokemon.typeList;
+  pokemonTagId.innerHTML = `ID: ${pokemon.id}`;
+  pokemonTagName.innerHTML = `Name: ${pokemon.name}`;
+  pokemonTagTypeList.innerHTML = `Type: ${pokemon.typeList}`;
+
+  pokemonTag.setAttribute('class', 'results__pokemon');
 
   appendChild(resultsElement, pokemonTag);
   appendChild(pokemonTag, pokemonTagId);

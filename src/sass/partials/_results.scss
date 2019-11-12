@@ -1,7 +1,17 @@
 .results {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
   font-size: 0.8rem;
 }
 
 .results__empty {
   color: $warning-color;
+}
+
+.results__pokemon {
+  border: 5px solid $secondary-color;
+  width: fit-content;
+  padding: 5px;
+  align-self: center;
 }
