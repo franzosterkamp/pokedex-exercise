@@ -1,4 +1,4 @@
-import pokemons from 'json-pokemon';
+import pokemons from '../pokemons.json';
 
 export function getPokemonsByName(pokemonName) {
   const selection = pokemons.filter(({ name }) =>

@@ -1,0 +1,6 @@
+[
+  { "id": 1, "name": "Franz", "typeList": ["Grass", "Poison"] },
+  { "id": 2, "name": "Leon", "typeList": ["Grass", "Poison"] },
+  { "id": 3, "name": "Marwin", "typeList": ["Grass", "Poison"] },
+  { "id": 4, "name": "Peter", "typeList": ["Ghost", "Fighting"] }
+]
